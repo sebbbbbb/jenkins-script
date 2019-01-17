@@ -19,7 +19,7 @@ Paramètre :
 * lint_file : optionnel, permet de spécifier un fichier custom pour SwiftLint
 
 Exemple d'utilisation :
-```
+```java
 // Dans un Jenkinsfile
 build(
 [
@@ -47,7 +47,7 @@ Paramètre :
 * crashlytics_changelog, optionnel log de la version attention cela doit être le chemin vers un fichier et non pas une chaine de caractères
 
 Exemple d'utilisation :
-```
+```java
 // Dans un Jenkinsfile
 fabrics(
 [

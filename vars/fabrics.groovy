@@ -16,23 +16,16 @@ def call(params) {
     checkout scm
   }
 
-
   stage("Clean") {
-    echo 'Clean Build directory & DerivedData'
-    sh 'rm -rf ./Build/*'
-    sh 'rm -rf ~/Library/Developer/Xcode/DerivedData/' + params["project_name"] + '*'
-    echo 'Clean done'
+    sh utils.cleanProjectCmd(params["project_name"])
   }
 
-  // TODO: Refactor
   stage("Bundler") {
-    sh 'rvm 2.3.3 do bundle install'
+    sh utils.gemBundleInstallCmd()
   }
 
-  // TODO: Refactor
   stage("Cocoapods") {
-    sh 'rvm 2.3.3 do bundle exec pod update'
-    sh 'rvm 2.3.3 do bundle exec pod install'
+    sh utils.podInstallCmd()
   }
 
   stage("Build") {

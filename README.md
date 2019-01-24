@@ -3,7 +3,7 @@
 ## Présentation
 
 Ce repo peut être utilisé en tant que shared librarie sur Jenkins pour mutualiser les scripts entre utilisateurs.
-A l'heure actuelle il contient deux script iOS :
+A l'heure actuelle il contient deux scripts iOS :
 
    ⚠️ Pour iOS les projets doivent versionner leurs dépendances ruby (cocoapod ...) avec un gemfile pour fonctionner
   avec ses scripts. 

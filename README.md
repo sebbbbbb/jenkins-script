@@ -31,7 +31,6 @@ build(
 )
 ```
 
-
 ### Fabrics
 
 Permet de lancer un build pour uploader un IPA vers Fabrics beta.
@@ -59,6 +58,33 @@ fabrics(
 "crashlytics_secret": "secret",
 "crashlytics_team": "mateam",
 "crashlytics_changelog": "path fichier changelog",
+]
+
+```
+
+### Testflight
+
+Permet de lancer un build pour uploader un IPA sur Testflight.
+Paramètre :
+* project_name
+* project_configuration, configuration utilisée pour le build
+* project_arch, optionnel permet de spécifier l'archi utilisé par XcodeBuild
+* slack_token
+* slack_channel
+* apple_id
+* apple_password
+
+Exemple d'utilisation :
+```java
+// Dans un Jenkinsfile
+testflight(
+[
+"project_name": "monprojet",
+"project_configuration": "Release",
+"slack_token" : "tokenSecret",
+"slack_channel": "yatta",
+"apple_id": "monmail@gmail.com",
+"apple_password": "secret",
 ]
 
 ```

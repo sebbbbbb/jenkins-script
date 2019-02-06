@@ -9,6 +9,8 @@ def call(params) {
     
     
       echo "$params"
+      echo "$params[project_name]"
+
 
       def mandatoryParams = ["project_name", "simulator", "slack_token", "slack_channel"]
       mandatoryParams.each {

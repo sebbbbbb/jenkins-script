@@ -8,17 +8,9 @@ def call(params) {
     stage("Check params"){
     
     
-      echo "$params"
-      echo "$params[project_name]"
+      
 
-
-      def mandatoryParams = ["project_name", "simulator", "slack_token", "slack_channel"]
-      mandatoryParams.each {
-        if ( params[{$it}] == null ) {
-          echo "Le paramètre ${it} doit être renseigné dans le tableau params."
-          assert false
-        }
-      }
+     
     }
 
     stage("Checkout") {

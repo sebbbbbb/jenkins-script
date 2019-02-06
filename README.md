@@ -3,7 +3,7 @@
 ## Présentation
 
 Ce repo peut être utilisé en tant que shared librarie sur Jenkins pour mutualiser les scripts entre utilisateurs.
-A l'heure actuelle il contient deux script iOS :
+A l'heure actuelle il contient deux scripts iOS :
 
    ⚠️ Pour iOS les projets doivent versionner leurs dépendances ruby (cocoapod ...) avec un gemfile pour fonctionner
   avec ses scripts. 
@@ -74,6 +74,11 @@ Paramètre :
 * apple_id
 * apple_password
 
+Pour ne pas mettre le mot de passe en clair sur le Jenkinsfile on utilise des params Jenkins :
+* Paramètre "Mot de passe", bien mettre le nom **PASSWORD**
+* Paramètre String, bien mettre le nom **LOGIN**
+
+
 Exemple d'utilisation :
 ```java
 // Dans un Jenkinsfile
@@ -83,8 +88,8 @@ testflight(
 "project_configuration": "Release",
 "slack_token" : "tokenSecret",
 "slack_channel": "yatta",
-"apple_id": "monmail@gmail.com",
-"apple_password": "secret",
+"apple_id": "${LOGIN}",
+"apple_password": "${PASSWORD}",
 ]
 
 ```

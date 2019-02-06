@@ -4,8 +4,12 @@ def call(params) {
 
   def utils = new org.ftv.Utils()
   try {
-    
+
     stage("Check params"){
+    
+    
+      echo "$params"
+
       def mandatoryParams = ["project_name", "simulator", "slack_token", "slack_channel"]
       mandatoryParams.each {
         if ( params[{$it}] == null ) {
